@@ -5,6 +5,7 @@
 lnInclude/
 linux64Gcc*/
 linux64Cray*/
+.vscode/
 
 # Compiled Object files
 *.slo

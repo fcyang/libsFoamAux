@@ -1,0 +1,31 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     |
+    \\  /    A nd           | Web:      www.OpenFOAM.com
+     \\/     M anipulation  |
+-------------------------------------------------------------------------------
+Description
+    This postprocessing tool is used to find the max z height of an input field
+    with input file phasePeakHeight in the simulation folder.
+
+\*---------------------------------------------------------------------------*/
+
+type            phasePeakHeight;
+libs            ("libphasePeakHeight.so");
+
+// it is necessary to specify the field used for finding the peak
+// here otherwise postProcess tool wont read them
+fields
+(
+    to
+);
+
+phaseCrit   0.5;
+
+// volume integration box is set by two points
+minPoint         (   1    0     -0.5 );
+maxPoint         (  37   33      1.0 );
+
+
+// ************************************************************************* //
